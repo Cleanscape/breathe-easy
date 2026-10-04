@@ -19,7 +19,7 @@ export function Brand({ size = 28 }: { size?: number }) {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
       <Logo size={size} />
-      <Text style={{ fontFamily: fonts.display, fontSize: size * 0.8, color: colors.pine }}>Stub It</Text>
+      <Text style={{ fontFamily: fonts.display, fontSize: size * 0.8, color: colors.pine }}>Breathe Easy</Text>
     </View>
   );
 }

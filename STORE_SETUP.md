@@ -1,4 +1,4 @@
-# Getting Stub It into the stores
+# Getting Breathe Easy into the stores
 
 The code is ready to build. These steps need the account owner, because they involve sign-ups, payment details and legal agreements.
 
@@ -16,17 +16,17 @@ Apple and Google both require paid-app agreements, tax forms and bank details be
 
 ## 2. App identity
 
-- Bundle ID / package name: `app.stubit.quit` (in `app.json`). Change it before the first upload if you want your own domain in it; it cannot change afterwards.
-- App name: "Stub It" is a working name. Run a store and trademark search before you submit.
+- Bundle ID / package name: `app.breatheeasy.quit` (in `app.json`). Change it before the first upload if you want your own domain in it; it cannot change afterwards.
+- App name: "Breathe Easy" on the device; list it in the stores as "Breathe Easy: Quit Smoking" (a small iOS app "Quit Smoking - Breatheasy CBT" already exists). Run a trademark search before you submit.
 
 ## 3. Subscriptions
 
-Create one subscription group, **Stub It Premium**, with two products in each store:
+Create one subscription group, **Breathe Easy Premium**, with two products in each store:
 
 | Product ID | Length | Free trial |
 | --- | --- | --- |
-| `stubit_premium_yearly` | 1 year | 7 days |
-| `stubit_premium_monthly` | 1 month | 7 days |
+| `breatheeasy_premium_yearly` | 1 year | 7 days |
+| `breatheeasy_premium_monthly` | 1 month | 7 days |
 
 Set prices by hand in App Store Connect and Play Console so each region shows a round local price:
 

@@ -21,7 +21,7 @@ export function Paywall({ go }: { go: Go }) {
     try {
       const r = await premium.buy(chosen);
       if (r === 'bought') go('home');
-      if (r === 'unavailable') setNote('Purchases open once Stub It is live in the App Store and Google Play.');
+      if (r === 'unavailable') setNote('Purchases open once Breathe Easy is live in the App Store and Google Play.');
     } catch {
       setNote('That did not go through. Nothing was charged; please try again.');
     } finally {
@@ -52,7 +52,7 @@ export function Paywall({ go }: { go: Go }) {
       <View style={s.mark}>
         <Logo size={60} dark />
       </View>
-      <Text style={[type.h2, { textAlign: 'center' }]}>Stub It Premium</Text>
+      <Text style={[type.h2, { textAlign: 'center' }]}>Breathe Easy Premium</Text>
       <Text style={[type.body, { textAlign: 'center', color: colors.muted }]}>Everything you need to quit stays free. Premium adds:</Text>
       <View style={{ gap: 10, marginVertical: 6 }}>
         <Perk text="Every health milestone, plus outfits for Ash" />

@@ -67,7 +67,7 @@ export function Progress({ go }: { go: Go }) {
       {!premium.active && <Button label="See Premium" variant="light" onPress={() => go('paywall')} style={{ marginTop: 8 }} />}
 
       <Text style={[type.small, { marginTop: 12 }]}>
-        Health facts from the WHO and NHS. Stub It supports your quit and is not a medical treatment.
+        Health facts from the WHO and NHS. Breathe Easy supports your quit and is not a medical treatment.
       </Text>
     </ScrollView>
   );

@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { DAY, EARN_PREMIUM_DAYS, logSlip, QuitState, streakDays } from './quit';
 
-const KEY = 'stubit.state.v1';
+const KEY = 'breatheeasy.state.v1';
 
 export type Goal = { name: string; price: number };
 

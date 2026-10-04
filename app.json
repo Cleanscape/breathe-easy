@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "Stub It",
-    "slug": "stub-it",
-    "scheme": "stubit",
+    "name": "Breathe Easy",
+    "slug": "breathe-easy",
+    "scheme": "breatheeasy",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "backgroundColor": "#EEF5F0",
     "ios": {
-      "bundleIdentifier": "app.stubit.quit",
+      "bundleIdentifier": "app.breatheeasy.quit",
       "buildNumber": "1",
       "supportsTablet": false,
       "config": {
@@ -17,7 +17,7 @@
       }
     },
     "android": {
-      "package": "app.stubit.quit",
+      "package": "app.breatheeasy.quit",
       "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#12312A",
@@ -28,8 +28,8 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "name": "Stub It",
-      "shortName": "Stub It",
+      "name": "Breathe Easy",
+      "shortName": "Breathe Easy",
       "description": "Quit smoking with Ash, who heals as you do.",
       "themeColor": "#12312A",
       "backgroundColor": "#EEF5F0",

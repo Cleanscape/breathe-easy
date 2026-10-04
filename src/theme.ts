@@ -1,4 +1,4 @@
-// Brand tokens from the Stub It design canvas ("Brand and character" board).
+// Brand tokens from the design canvas ("Brand and character" board), made under the old working name Stub It.
 export const colors = {
   freshAir: '#EEF5F0', // background
   pine: '#12312A', // text, craving screen

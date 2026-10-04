@@ -1,6 +1,6 @@
 // Public links required by the App Store and Google Play. Replace with the live URLs before submitting.
 export const LINKS = {
-  privacy: 'https://stubit.app/privacy.html', // public/privacy.html, served with the web version
+  privacy: 'https://breatheeasy.app/privacy.html', // public/privacy.html, served with the web version
   terms: 'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',
-  support: 'mailto:support@stubit.app',
+  support: 'mailto:support@breatheeasy.app',
 };

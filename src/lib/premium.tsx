@@ -5,7 +5,7 @@ import { regionPrices } from './region';
 
 // Purchases run through RevenueCat, which talks to the App Store, Google Play and (on the web) Stripe.
 // The stores pick the right regional price automatically; the keys below come from the RevenueCat dashboard.
-// See STORE_SETUP.md for the products to create (stubit_premium_yearly, stubit_premium_monthly, 7-day trial).
+// See STORE_SETUP.md for the products to create (breatheeasy_premium_yearly, breatheeasy_premium_monthly, 7-day trial).
 export const ENTITLEMENT = 'premium';
 
 const API_KEY = Platform.select({

@@ -1,6 +1,6 @@
-# Stub It
+# Breathe Easy
 
-A simple quit-smoking app for iPhone, Android and the web, built with Expo (SDK 57) from one codebase.
+A simple quit-smoking app (store name "Breathe Easy: Quit Smoking") for iPhone, Android and the web, built with Expo (SDK 57) from one codebase.
 
 Ash, a cartoon smoker, coughs and stubs out a cigarette when you start, then visibly heals at each health milestone while you stay smoke-free.
 
@@ -45,4 +45,4 @@ npm run build:web  # static web build in dist/
 | `src/lib/store.tsx` | Saved state (on the device only) |
 | `public/privacy.html` | Privacy policy, served with the web version |
 
-Design source: the "Stub It app design" canvas (brand colours, Fredoka and DM Sans, Ash's six looks).
+Design source: the "Stub It app design" canvas, made before the rename (brand colours, Fredoka and DM Sans, Ash's six looks).

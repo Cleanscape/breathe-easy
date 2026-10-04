@@ -97,7 +97,7 @@ export function Settings({ go }: { go: Go }) {
         <Text style={s.link} onPress={() => Linking.openURL(LINKS.support)}>Contact support</Text>
       </Card>
       <Text style={type.small}>
-        Your quit data stays on this device. Health facts come from the WHO and NHS. Stub It supports your quit and is not a medical
+        Your quit data stays on this device. Health facts come from the WHO and NHS. Breathe Easy supports your quit and is not a medical
         treatment; talk to a doctor or pharmacist about nicotine replacement and other help.
       </Text>
       <Button label="Start over" variant="ghost" onPress={confirmReset} />
