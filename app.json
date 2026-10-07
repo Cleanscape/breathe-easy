@@ -47,6 +47,9 @@
           "backgroundColor": "#EEF5F0"
         }
       ]
-    ]
+    ],
+    "experiments": {
+      "baseUrl": "/breathe-easy"
+    }
   }
 }
