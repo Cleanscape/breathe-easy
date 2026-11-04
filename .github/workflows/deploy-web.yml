@@ -1,5 +1,5 @@
 # Builds the web version and publishes it to GitHub Pages:
-# https://badboybtc25.github.io/breathe-easy/
+# https://cleanscape.github.io/breathe-easy/
 name: Deploy web
 
 on:

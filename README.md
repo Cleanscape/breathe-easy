@@ -31,7 +31,7 @@ npm test           # quit maths: savings, streak, shields, milestones, badges
 npm run build:web  # static web build in dist/
 ```
 
-The web version is published to https://badboybtc25.github.io/breathe-easy/ by `.github/workflows/deploy-web.yml` on every push to `main`.
+The web version is published to https://cleanscape.github.io/breathe-easy/ by `.github/workflows/deploy-web.yml` on every push to `main`.
 
 ## Layout
 
