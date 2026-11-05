@@ -2,6 +2,7 @@
   "expo": {
     "name": "Breathe Easy",
     "slug": "breathe-easy",
+    "owner": "stellaforgestudios",
     "scheme": "breatheeasy",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,7 +10,7 @@
     "userInterfaceStyle": "light",
     "backgroundColor": "#EEF5F0",
     "ios": {
-      "bundleIdentifier": "app.breatheeasy.quit",
+      "bundleIdentifier": "com.stellaforgestudios.breatheeasy",
       "buildNumber": "1",
       "supportsTablet": false,
       "config": {
@@ -17,7 +18,7 @@
       }
     },
     "android": {
-      "package": "app.breatheeasy.quit",
+      "package": "com.stellaforgestudios.breatheeasy",
       "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#12312A",
