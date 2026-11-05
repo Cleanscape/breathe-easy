@@ -16,7 +16,8 @@ Apple and Google both require paid-app agreements, tax forms and bank details be
 
 ## 2. App identity
 
-- Bundle ID / package name: `app.breatheeasy.quit` (in `app.json`). Change it before the first upload if you want your own domain in it; it cannot change afterwards.
+- Bundle ID / package name: `com.stellaforgestudios.breatheeasy` (in `app.json`). It cannot change after the first upload.
+- Expo account: `stellaforgestudios` (the `owner` in `app.json`).
 - App name: "Breathe Easy" on the device; list it in the stores as "Breathe Easy: Quit Smoking" (a small iOS app "Quit Smoking - Breatheasy CBT" already exists). Run a trademark search before you submit.
 
 ## 3. Subscriptions
