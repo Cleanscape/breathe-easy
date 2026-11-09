@@ -11,7 +11,6 @@
     "backgroundColor": "#EEF5F0",
     "ios": {
       "bundleIdentifier": "com.stellaforgestudios.breatheeasy",
-      "buildNumber": "1",
       "supportsTablet": false,
       "config": {
         "usesNonExemptEncryption": false
@@ -19,7 +18,6 @@
     },
     "android": {
       "package": "com.stellaforgestudios.breatheeasy",
-      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#12312A",
         "foregroundImage": "./assets/android-icon-foreground.png",
