@@ -1,6 +1,9 @@
 # Builds the iPhone and Android apps on Expo's servers (EAS Build).
 # Needs a repository secret EXPO_TOKEN: an Expo access token from
 # https://expo.dev/accounts/stellaforgestudios/settings/access-tokens
+# iPhone builds also need an App Store Connect API key, as repository secrets:
+#   ASC_API_KEY (the whole .p8 file text), ASC_KEY_ID, ASC_ISSUER_ID, APPLE_TEAM_ID.
+# EAS uses it to register the bundle ID and create the signing certificate and profile.
 # Run it from the Actions tab: Build apps > Run workflow.
 name: Build apps
 
@@ -35,4 +38,16 @@ jobs:
       - run: npm test
       # Creates the Expo project on the first run and links to it after that.
       - run: eas init --force --non-interactive
+      - name: App Store Connect API key (iPhone builds)
+        if: inputs.platform != 'android'
+        env:
+          ASC_API_KEY: ${{ secrets.ASC_API_KEY }}
+        run: |
+          printf '%s\n' "$ASC_API_KEY" > "$RUNNER_TEMP/asc_api_key.p8"
+          echo "EXPO_ASC_API_KEY_PATH=$RUNNER_TEMP/asc_api_key.p8" >> "$GITHUB_ENV"
       - run: eas build --platform ${{ inputs.platform }} --profile ${{ inputs.profile }} --non-interactive --no-wait
+        env:
+          EXPO_ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          EXPO_ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          EXPO_APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          EXPO_APPLE_TEAM_TYPE: INDIVIDUAL
