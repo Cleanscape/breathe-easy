@@ -38,6 +38,7 @@ type Store = {
   slip: () => boolean;
   claimEarnedPremium: () => void;
   canClaimEarnedPremium: (now: number) => boolean;
+  unlockForReview: () => void;
   reset: () => void;
 };
 
@@ -92,6 +93,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       canClaimEarnedPremium: (now) => !state.earnedClaimed && streakDays(state, now) >= EARN_PREMIUM_DAYS,
       claimEarnedPremium: () =>
         setState((s) => ({ ...s, earnedClaimed: true, earnedPremiumUntil: Date.now() + 30 * DAY })),
+      unlockForReview: () => setState((s) => ({ ...s, earnedPremiumUntil: Date.now() + 30 * DAY })),
       reset: () => setState(initialState),
     }),
     [state, loaded, update],
