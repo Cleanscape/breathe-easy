@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { ActivityIndicator, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Linking, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Button, Icon, IconButton, icons, Logo, type } from '../components/ui';
 import { LINKS } from '../config';
 import { PlanOption } from '../lib/premium';
+import { isReviewCode } from '../lib/reviewCode';
+import { useStore } from '../lib/store';
 import { usePremium } from '../lib/usePremium';
 import { colors, fonts } from '../theme';
 import type { Go } from '../../App';
@@ -12,6 +14,9 @@ export function Paywall({ go }: { go: Go }) {
   const [pick, setPick] = useState<'yearly' | 'monthly'>('yearly');
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState('');
+  const [codeOpen, setCodeOpen] = useState(false);
+  const [code, setCode] = useState('');
+  const { unlockForReview } = useStore();
   const { yearly, monthly } = premium.plans;
   const chosen: PlanOption = pick === 'yearly' ? yearly : monthly;
 
@@ -39,6 +44,15 @@ export function Paywall({ go }: { go: Go }) {
       setNote('Could not reach the store. Please try again.');
     } finally {
       setBusy(false);
+    }
+  };
+
+  const applyCode = () => {
+    if (isReviewCode(code)) {
+      unlockForReview();
+      go('home');
+    } else {
+      setNote('That code is not valid.');
     }
   };
 
@@ -76,6 +90,26 @@ export function Paywall({ go }: { go: Go }) {
       </Text>
       {!!note && <Text style={[type.strong, { textAlign: 'center', fontSize: 14 }]}>{note}</Text>}
       <Button label="Restore purchase" variant="ghost" onPress={restore} />
+      {codeOpen ? (
+        <View style={{ gap: 8 }}>
+          <TextInput
+            accessibilityLabel="Review code"
+            value={code}
+            onChangeText={setCode}
+            placeholder="Review code"
+            placeholderTextColor={colors.smoke}
+            autoCapitalize="characters"
+            autoCorrect={false}
+            onSubmitEditing={applyCode}
+            style={s.input}
+          />
+          <Button label="Apply code" variant="ghost" onPress={applyCode} />
+        </View>
+      ) : (
+        <Text style={[s.link, { textAlign: 'center' }]} onPress={() => setCodeOpen(true)}>
+          Have a review code?
+        </Text>
+      )}
       <View style={s.links}>
         <Text style={s.link} onPress={() => Linking.openURL(LINKS.terms)}>
           Terms of use
@@ -122,6 +156,7 @@ const s = StyleSheet.create({
   mark: { width: 84, height: 84, borderRadius: 24, backgroundColor: colors.pine, alignItems: 'center', justifyContent: 'center', alignSelf: 'center' },
   plan: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: colors.white, borderRadius: 20, padding: 18, borderWidth: 3 },
   tag: { marginTop: 4, backgroundColor: colors.sunshine, color: '#6B4A00', fontFamily: fonts.bodyBold, fontSize: 12, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10, overflow: 'hidden' },
+  input: { backgroundColor: colors.white, borderRadius: 14, borderWidth: 1, borderColor: colors.line, paddingHorizontal: 14, height: 50, fontFamily: fonts.body, fontSize: 16, color: colors.pine },
   links: { flexDirection: 'row', justifyContent: 'center', gap: 24 },
   link: { fontFamily: fonts.body, fontSize: 13, color: colors.leaf, textDecorationLine: 'underline' },
 });
